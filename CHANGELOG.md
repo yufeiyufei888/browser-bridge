@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1 — 2026-09-11
+
+**文档修订版 —— 脚本零改动**（`scripts/`、`references/`、`templates/` 与上游 web-access 仍逐字节一致）。
+
+- 子 Agent 段落：明确 **模型默认继承主对话当前模型**。DSH 0.1.5-rc.1 起，子代理路由实时取自父会话的 request header（`dsh-subagent/lib/index.js` 的 `parentAgentOptionsForDelegation`），早期「继承创建时模型、不随 UI 切换」的缺陷已修复，因此不再建议一律强制指定模型。
+- 截图说明：去掉具体工具名，改为「落盘后交给模型的多模态输入」（原生多模态读图，无需第三方视觉 API），便于跨 Agent 通用。
+- `NOTICE.md` 同步记录以上改动。
 ## 1.0.0 — 2026-09-11
 
 首个发行版，基线为上游 [web-access](https://github.com/eze-is/web-access) v2.5.4（commit `33eef84`）。
