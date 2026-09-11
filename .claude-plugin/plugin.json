@@ -1,0 +1,19 @@
+{
+  "name": "browser-bridge",
+  "description": "让任何 AI Agent 用上你的真实浏览器（CDP，自带登录态）—— 跨平台 / 跨 Agent 技能包",
+  "version": "1.0.0",
+  "author": {
+    "name": "yufeiyufei888",
+    "url": "https://github.com/yufeiyufei888"
+  },
+  "homepage": "https://github.com/yufeiyufei888/browser-bridge",
+  "repository": "https://github.com/yufeiyufei888/browser-bridge",
+  "license": "MIT",
+  "keywords": [
+    "skill",
+    "browser",
+    "cdp",
+    "automation",
+    "agent"
+  ]
+}

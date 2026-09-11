@@ -1,0 +1,7 @@
+# 个人配置（含浏览器偏好），不要提交
+config.env
+
+# 运行日志与临时文件
+*.log
+.DS_Store
+Thumbs.db

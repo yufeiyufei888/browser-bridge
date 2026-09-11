@@ -1,0 +1,17 @@
+{
+  "name": "browser-bridge",
+  "owner": {
+    "name": "yufeiyufei888"
+  },
+  "metadata": {
+    "description": "browser-bridge —— 跨平台 / 跨 Agent 的真实浏览器技能包",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "browser-bridge",
+      "source": "./",
+      "description": "真实浏览器（CDP）联网与页面操作技能"
+    }
+  ]
+}
