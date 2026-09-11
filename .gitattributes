@@ -1,0 +1,6 @@
+# 统一行尾：保证任何平台 clone 出来的字节与上游一致
+* text=auto eol=lf
+
+# 明确二进制，别做行尾转换
+*.png binary
+*.webp binary
