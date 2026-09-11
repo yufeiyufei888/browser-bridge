@@ -170,7 +170,7 @@ curl.exe -s -X POST --data-raw "document.title" "$P/eval?target=ID"
 [IO.File]::WriteAllText("$env:TEMP\wa-expr.js", 'JSON.stringify([...document.querySelectorAll("a")].map(a=>a.href).slice(0,20))', (New-Object Text.UTF8Encoding($false)))
 curl.exe -s -X POST --data-binary "@$env:TEMP\wa-expr.js" "$P/eval?target=ID"
 
-# 捕获页面渲染状态（含视频当前帧）；落盘后用 DSH 的 read_image 工具查看
+# 捕获页面渲染状态（含视频当前帧）；落盘后把这张图交给模型的多模态输入直接看（无需第三方视觉 API）
 curl.exe -s "$P/screenshot?target=ID&file=$env:TEMP\wa-shot.png"
 
 # 导航（URL 走 POST body，target 走 query）、后退
@@ -242,6 +242,8 @@ Proxy 持续运行，不建议主动停止——重启后需要在浏览器中�
 ## 并行调研：子 Agent 分治策略
 
 任务包含多个**独立**调研目标时（如同时调研 N 个项目、N 个来源），鼓励合理分治给子 Agent 并行执行，而非主 Agent 串行处理。
+
+**子 Agent 的模型**：默认由 Agent 继承**主对话当前的模型**（DSH 0.1.5-rc.1 起，子代理路由实时取自父会话的 request header，不再锁定创建时的模型）。因此**不要**为了规避旧缺陷而一律强制指定模型 —— 让子 Agent 与主对话保持同一模型即可。只有当你确实要换模型、或所用 Agent 版本确实存在继承问题时，才在调用里显式指定 provider/model。
 
 **好处：**
 - **速度**：多子 Agent 并行，总耗时约等于单个子任务时长

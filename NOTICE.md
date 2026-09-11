@@ -26,7 +26,7 @@
 
 | 文件 | 改动 |
 |---|---|
-| `SKILL.md` | 基于上游 SKILL.md 改编：`name` 改为 `browser-bridge`；新增「适配与使用前提」（技能根目录解析、两种 shell 方言对照、环境要求、不要接管全部联网）；命令示例统一用 `<SKILL_DIR>` 占位符；Proxy API 段按 PowerShell 改写并注明 POSIX 等价写法；子 Agent 段改为 Agent 无关；新增「已知限制与排错」「归属与许可」 |
+| `SKILL.md` | 基于上游 SKILL.md 改编：`name` 改为 `browser-bridge`；新增「适配与使用前提」（技能根目录解析、两种 shell 方言对照、环境要求、不要接管全部联网）；命令示例统一用 `<SKILL_DIR>` 占位符；Proxy API 段按 PowerShell 改写并注明 POSIX 等价写法；子 Agent 段改为 Agent 无关并补「模型默认继承主对话当前模型」（DSH 0.1.5-rc.1 起该继承缺陷已修复）；截图说明去掉具体工具名，改为「交给模型多模态输入」；新增「已知限制与排错」「归属与许可」 |
 | `README.md` / `README.en.md` | 新写：定位、能力、安装（DSH / Claude Code / Codex / 通用）、前置条件、快速验证、API 速查、平台差异、限制、安全与合规 |
 | `docs/` | 新写：分 Agent 安装细节、Windows PowerShell 差异与实测记录 |
 | `templates/config.env.template` | 上游文件原样保留（未覆盖） |
