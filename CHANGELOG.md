@@ -1,4 +1,10 @@
 # Changelog
+## 1.0.2 — 2026-10-05
+
+**文档增补 —— 排障指南**（`scripts/` 等仍与上游逐字节一致，零改动）。
+
+- 新增 `references/edge-remote-debugging-consent.md`：Edge 136+「是否允许远程调试？」consent 弹窗反复弹出/堆叠卡死的根因（Chromium 原生对话框，UIA/Win32 点不到；app 模式或 inspect 开关开调试才反复弹）、实测结论表、已验证解法（普通模式 + `--remote-debugging-port` 启动；客户端固定连该实例而非按 `DevToolsActivePort` 自动发现）、无效方案清单与验证方法。
+
 
 ## 1.0.1 — 2026-09-11
 
