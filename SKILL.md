@@ -327,3 +327,5 @@ updated: 2026-03-19
 |------|---------|
 | `references/cdp-api.md` | 需要 CDP API 详细参考、JS 提取模式、错误处理时 |
 | `references/site-patterns/{domain}.md` | 确定目标网站后，读取对应站点经验 |
+| `references/edge-remote-debugging-consent.md` | Edge 136+「是否允许远程调试？」consent 弹窗反复弹出/堆叠卡死时 |
+| `references/sandbox-env-injection.md` | **cdp-proxy 起不来/检测不到浏览器**（run_code 沙箱等 process.env 被清空的环境）|

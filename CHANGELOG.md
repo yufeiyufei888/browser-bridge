@@ -1,4 +1,10 @@
 # Changelog
+## 1.0.3 — 2026-11-05
+
+**文档增补 —— run_code 沙箱连接性排障**（`scripts/` 等仍与上游逐字节一致，零改动）。
+
+- 新增 `references/sandbox-env-injection.md`：**run_code 沙箱 process.env 为空导致 cdp-proxy 起不来**的根因与修复。`browser-discovery.mjs` 用 `process.env.LOCALAPPDATA` 构造 `DevToolsActivePort` 路径，沙箱里该变量为 `undefined` 时路径退化为相对路径，`fs.existsSync` 返回 false，`detectAll()` 跳过浏览器，`selectBrowser()` 返回 mismatch，proxy 无法连接。**修复**：spawn `cdp-proxy.mjs` 时显式注入 `LOCALAPPDATA`/`USERPROFILE`/`APPDATA`/`HOME`。含完整启动流程、诊断步骤（端口检测、首次 WS 授权、curl.exe vs fetch）、影响范围（DSH run_code / Codex 后台 eval / CI 容器等）。**通用规则**：spawn 子进程读环境变量时永远显式注入，不要假设 `process.env` 完整。
+
 ## 1.0.2 — 2026-10-05
 
 **文档增补 —— 排障指南**（`scripts/` 等仍与上游逐字节一致，零改动）。
